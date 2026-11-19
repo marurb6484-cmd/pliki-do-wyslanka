@@ -1,0 +1,1 @@
+# pliki-do-wyslanka

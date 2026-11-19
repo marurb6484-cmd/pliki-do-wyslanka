@@ -1,0 +1,42 @@
+
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "robot-racing-multiplayer",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RACE_ROOMS",
+        "class_name": "RaceRoom"
+      },
+      {
+        "name": "ROOM_DIRECTORY",
+        "class_name": "RoomDirectory"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["RaceRoom"]
+    },
+    {
+      "tag": "v2",
+      "new_sqlite_classes": ["RoomDirectory"]
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "crunpbot-racer-db",
+      "database_id": "ae95f769-978e-489a-9b83-deeddde0dcb7",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
+
